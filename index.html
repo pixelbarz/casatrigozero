@@ -15,23 +15,29 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
   </head>
   <body>
+    <div class="bg-shape shape-1" aria-hidden="true"></div>
+    <div class="bg-shape shape-2" aria-hidden="true"></div>
+    <div class="bg-shape shape-3" aria-hidden="true"></div>
+
     <header class="site-header">
       <div class="container nav-wrap">
         <a href="#topo" class="logo">
           <img class="logo-mark" src="logocirculo.png" alt="Logo Casa Trigo Zero" />
           <span class="logo-text">Casa Trigo Zero</span>
         </a>
-        <button id="menuBtn" class="menu-btn" aria-label="Abrir menu">Menu</button>
+        <button id="menuBtn" class="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
+          Menu
+        </button>
         <nav id="mainNav" class="nav">
-          <a href="https://pedido.anota.ai/loja/trigo-zero?f=ms" target="_blank" rel="noopener noreferrer">Cardápio</a>
-          <a href="#diferenciais">Diferenciais</a>
-          <a href="https://wa.me/+556584742600" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-          <a href="https://www.instagram.com/casatrigozero/" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="#contato">Contato</a>
-          <a href="https://pedido.anota.ai/loja/trigo-zero?f=ms" class="btn btn-sm" target="_blank" rel="noopener noreferrer">Peça Agora</a>
+          <a class="nav-link" href="https://pedido.anota.ai/loja/trigo-zero?f=ms" target="_blank" rel="noopener noreferrer">Cardápio</a>
+          <a class="nav-link" href="#diferenciais">Diferenciais</a>
+          <a class="nav-link" href="https://wa.me/+556584742600" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a class="nav-link" href="https://www.instagram.com/casatrigozero/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a class="nav-link" href="#contato">Contato</a>
+          <a href="https://pedido.anota.ai/loja/trigo-zero?f=ms" class="btn btn-sm nav-cta" target="_blank" rel="noopener noreferrer">Peça Agora</a>
         </nav>
       </div>
     </header>
@@ -46,17 +52,23 @@
               Receitas autorais sem glúten e sem leite.
               Um espaço acolhedor para adquirir produtos frescos e artesanais.
             </p>
+            <ul class="hero-tags">
+              <li class="reveal">Sem glúten</li>
+              <li class="reveal">Sem leite</li>
+              <li class="reveal">Produção diária</li>
+            </ul>
             <div class="hero-cta">
               <a class="btn" href="https://pedido.anota.ai/loja/trigo-zero?f=ms" target="_blank" rel="noopener noreferrer">Fazer Pedido</a>
               <a class="btn btn-ghost" href="https://pedido.anota.ai/loja/trigo-zero?f=ms" target="_blank" rel="noopener noreferrer">Ver Cardápio</a>
             </div>
           </div>
           <div class="hero-media reveal">
-            <img
-              src="fachada.png"
-              alt="Fachada da Casa Trigo Zero"
-            />
+            <span class="hero-badge">Artesanal em pequenos lotes</span>
+            <img src="fachada.png" alt="Fachada da Casa Trigo Zero" />
           </div>
+        </div>
+        <div class="container promise-strip reveal">
+          <p>Receitas autorais, ingredientes selecionados e atendimento acolhedor em todos os detalhes.</p>
         </div>
       </section>
 
@@ -68,33 +80,27 @@
           </div>
           <div class="cards">
             <article class="card reveal">
-              <img
-                src="paocenoura.png"
-                alt="Pão artesanal de Cenoura"
-              />
+              <img src="paocenoura.png" alt="Pão artesanal de Cenoura" />
               <div class="card-body">
                 <h3>Pão de Cenoura</h3>
                 <p>Pão artesanal de cenoura e ingredientes selecionados.</p>
+                <a class="card-link" href="https://pedido.anota.ai/loja/trigo-zero?f=ms" target="_blank" rel="noopener noreferrer">Peça no cardápio</a>
               </div>
             </article>
             <article class="card reveal">
-              <img
-                src="torta.png"
-                alt="Torta de Mussarela vegetal"
-              />
+              <img src="torta.png" alt="Torta de Mussarela vegetal" />
               <div class="card-body">
-                <h3>Torta de frango com mussarela Vegetal</h3>
-                <p>Torta de frango com mussarela vegetal. Sabor suave e recheio nutritivo.</p>
+                <h3>Torta de frango com mussarela vegetal</h3>
+                <p>Torta de frango com mussarela vegetal, sabor suave e recheio nutritivo.</p>
+                <a class="card-link" href="https://pedido.anota.ai/loja/trigo-zero?f=ms" target="_blank" rel="noopener noreferrer">Peça no cardápio</a>
               </div>
             </article>
             <article class="card reveal">
-              <img
-                src="cuca.png"
-                alt="Cuca de Uva"
-              />
+              <img src="cuca.png" alt="Cuca de Uva" />
               <div class="card-body">
                 <h3>Cuca de Uva</h3>
-                <p>Cuca de uva com massa leve cobertura com farofa doce e crocante.</p>
+                <p>Cuca de uva com massa leve e cobertura de farofa doce e crocante.</p>
+                <a class="card-link" href="https://pedido.anota.ai/loja/trigo-zero?f=ms" target="_blank" rel="noopener noreferrer">Peça no cardápio</a>
               </div>
             </article>
           </div>
@@ -106,17 +112,24 @@
           <div class="reveal">
             <p class="eyebrow">NOSSO JEITO</p>
             <h2>Qualidade da massa ao atendimento</h2>
+            <p>
+              Da cozinha ao balcão, cada etapa é feita com cuidado para oferecer sabor,
+              leveza e segurança alimentar no seu dia a dia.
+            </p>
             <ul class="feature-list">
-              <li>Ingredientes selecionados e de qualidade.</li>
-              <li>Produção diária em pequenos lotes.</li>
-              <li>Espaço acolhedor para suas compras.</li>
+              <li class="reveal">Ingredientes selecionados e de qualidade.</li>
+              <li class="reveal">Produção diária em pequenos lotes.</li>
+              <li class="reveal">Espaço acolhedor para suas compras.</li>
             </ul>
+            <div class="value-points">
+              <span class="reveal">Receitas autorais</span>
+              <span class="reveal">Sabor de casa</span>
+              <span class="reveal">Atendimento próximo</span>
+            </div>
           </div>
           <div class="image-stack reveal">
-            <img
-              src="paobrioche.png"
-              alt="Pão artesanal de brioche"
-            />
+            <img src="paobrioche.png" alt="Pão artesanal de brioche" />
+            <img class="stamp" src="logocirculo.png" alt="" aria-hidden="true" />
           </div>
         </div>
       </section>
@@ -127,6 +140,7 @@
             <p class="eyebrow">ENCOMENDAS</p>
             <h2>Faça seu pedido online</h2>
             <p>Monte sua cesta com pães, doces e bebidas para retirada ou entrega.</p>
+            <p class="cta-note">Atendimento rápido para pedidos do dia a dia e ocasiões especiais.</p>
           </div>
           <a class="btn" href="https://pedido.anota.ai/loja/trigo-zero?f=ms" target="_blank" rel="noopener noreferrer">Quero Pedir</a>
         </div>
@@ -158,9 +172,9 @@
         </div>
         <div>
           <h4>Contato</h4>
-          <p><a href="https://wa.me/+556584742600" target="_blank" rel="noopener noreferrer">WhatsApp: +55 65 8474-2600</a></p>
+          <p><a class="contact-link" href="https://wa.me/+556584742600" target="_blank" rel="noopener noreferrer">WhatsApp: +55 65 8474-2600</a></p>
           <p>Email: casatrigozero@gmail.com</p>
-          <p><a href="https://www.instagram.com/casatrigozero/" target="_blank" rel="noopener noreferrer">@casatrigozero</a></p>
+          <p><a class="contact-link" href="https://www.instagram.com/casatrigozero/" target="_blank" rel="noopener noreferrer">@casatrigozero</a></p>
         </div>
       </div>
       <p class="copyright">
