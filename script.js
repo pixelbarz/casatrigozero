@@ -59,6 +59,7 @@ setRevealDelay(".hero-tags .reveal", 80);
 setRevealDelay(".cards .reveal", 110);
 setRevealDelay(".feature-list .reveal", 120);
 setRevealDelay(".value-points .reveal", 120);
+setRevealDelay(".instagram-shell .reveal", 120);
 
 const revealEls = document.querySelectorAll(".reveal");
 
