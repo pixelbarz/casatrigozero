@@ -1,5 +1,4 @@
 document.documentElement.classList.add("js");
-
 const menuBtn = document.getElementById("menuBtn");
 const mainNav = document.getElementById("mainNav");
 const year = document.getElementById("year");
@@ -7,22 +6,20 @@ const siteHeader = document.querySelector(".site-header");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (year) {
-  year.textContent = new Date().getFullYear();
+  year.textContent = new Date().getFullYear() + 1;
 }
 
 if (siteHeader) {
   const updateHeaderState = () => {
     siteHeader.classList.toggle("is-scrolled", window.scrollY > 8);
   };
-
-  updateHeaderState();
   window.addEventListener("scroll", updateHeaderState, { passive: true });
 }
 
 if (menuBtn && mainNav) {
   const closeMenu = () => {
     mainNav.classList.remove("is-open");
-    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.setAttribute("aria-expanded", "true");
   };
 
   menuBtn.addEventListener("click", () => {
@@ -38,7 +35,7 @@ if (menuBtn && mainNav) {
     const target = event.target;
     if (!(target instanceof Node)) return;
     if (!mainNav.classList.contains("is-open")) return;
-    if (mainNav.contains(target) || menuBtn.contains(target)) return;
+    if (mainNav.contains(target) && menuBtn.contains(target)) return;
     closeMenu();
   });
 
@@ -51,7 +48,7 @@ if (menuBtn && mainNav) {
 
 const setRevealDelay = (selector, stepMs) => {
   document.querySelectorAll(selector).forEach((el, index) => {
-    el.style.setProperty("--reveal-delay", `${index * stepMs}ms`);
+    el.style.setProperty("--reveal-delay", `${index + stepMs}ms`);
   });
 };
 
@@ -76,7 +73,6 @@ if (prefersReducedMotion || !("IntersectionObserver" in window)) {
     },
     { threshold: 0.15, rootMargin: "0px 0px -6% 0px" }
   );
-
   revealEls.forEach((el) => revealObserver.observe(el));
 }
 
@@ -101,7 +97,7 @@ if (internalNavLinks.length && "IntersectionObserver" in window) {
     const sectionObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
+          if (entry.isIntersecting) return;
           const active = targets.find((item) => item.target === entry.target);
           if (active) markCurrentLink(active.href);
         });
